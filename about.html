@@ -5,24 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giới thiệu - MiniShop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
-    <!-- Buổi 01 - Trang giới thiệu -->
+    <!-- Buổi 02 - Trang giới thiệu -->
 
     <header class="site-header">
         <h1>MiniShop</h1>
         <nav class="main-nav">
-            <a href="index.html">Trang chủ</a> |
-            <a href="about.html">Giới thiệu</a> |
-            <a href="register.html">Đăng ký</a> |
-            <a href="login.html">Đăng nhập</a> |
-            <a href="cart.html">Giỏ hàng</a> |
+            <a href="index.html">Trang chủ</a>
+            <a href="about.html" class="active">Giới thiệu</a>
             <a href="contact.html">Liên hệ</a>
+            <a href="cart.html">Giỏ hàng (<span id="cart-count">0</span>)</a>
+            <a href="login.html">Đăng nhập</a>
+            <a href="register.html">Đăng ký</a>
         </nav>
     </header>
 
-    <main>
+    <main class="page-about">
         <h2>Giới thiệu MiniShop</h2>
 
         <img src="images/sp01.jpg" alt="Chuột không dây M1" width="200">
@@ -64,7 +67,25 @@
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 MiniShop. Dự án thực hành lập trình web.</p>
+        <div class="footer-grid">
+            <div>
+                <h3>MiniShop</h3>
+                <p>Phụ kiện công nghệ chọn lọc cho sinh viên: bền, dễ dùng và đúng giá.</p>
+            </div>
+            <div>
+                <h3>Khám phá</h3>
+                <a href="index.html">Trang chủ</a>
+                <a href="about.html">Giới thiệu</a>
+                <a href="cart.html">Giỏ hàng</a>
+            </div>
+            <div>
+                <h3>Liên hệ</h3>
+                <p>lenhattung@gmail.com</p>
+                <p>0123 456 789</p>
+                <p>8:00 - 22:00 mỗi ngày</p>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 MiniShop. Dự án thực hành lập trình web.</p>
     </footer>
 </body>
 

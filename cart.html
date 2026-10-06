@@ -5,64 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giỏ hàng - MiniShop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
-    <!-- Buổi 01 - Bài tập về nhà: Giỏ hàng (dữ liệu nhập tay) -->
+    <!-- Buổi 02 - Giỏ hàng: JavaScript tự tính thành tiền và tổng cộng -->
 
     <header class="site-header">
         <h1>MiniShop</h1>
         <nav class="main-nav">
-            <a href="index.html">Trang chủ</a> |
-            <a href="about.html">Giới thiệu</a> |
-            <a href="register.html">Đăng ký</a> |
-            <a href="login.html">Đăng nhập</a> |
-            <a href="cart.html">Giỏ hàng</a> |
+            <a href="index.html">Trang chủ</a>
+            <a href="about.html">Giới thiệu</a>
             <a href="contact.html">Liên hệ</a>
+            <a href="cart.html" class="active">Giỏ hàng (<span id="cart-count">0</span>)</a>
+            <a href="login.html">Đăng nhập</a>
+            <a href="register.html">Đăng ký</a>
         </nav>
     </header>
 
     <main>
-        <h2>Giỏ hàng của bạn</h2>
+        <h2>Giỏ hàng</h2>
 
-        <table class="cart-table" border="1">
-            <thead>
-                <tr>
-                    <th>Sản phẩm</th>
-                    <th>Đơn giá</th>
-                    <th>Số lượng</th>
-                    <th>Thành tiền</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Chuột không dây M1</td>
-                    <td>250.000 đ</td>
-                    <td><input type="number" name="qty1" min="1" value="1" aria-label="Số lượng chuột không dây M1"></td>
-                    <td>250.000 đ</td>
-                </tr>
-                <tr>
-                    <td>Bàn phím cơ K2</td>
-                    <td>790.000 đ</td>
-                    <td><input type="number" name="qty2" min="1" value="1" aria-label="Số lượng bàn phím cơ K2"></td>
-                    <td>790.000 đ</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="3"><strong>Tổng tiền</strong></td>
-                    <td><strong>1.040.000 đ</strong></td>
-                </tr>
-            </tfoot>
-        </table>
+        <div class="table-wrap">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- data-price: đơn giá dạng số cho JavaScript tính; cột "Đơn giá" chỉ để hiển thị -->
+                    <tr data-price="250000">
+                        <td>Chuột không dây M1</td>
+                        <td>250.000 đ</td>
+                        <td><input type="number" class="qty" min="1" value="1"
+                                aria-label="Số lượng Chuột không dây M1"></td>
+                        <td class="line-total"></td>
+                    </tr>
+                    <tr data-price="790000">
+                        <td>Bàn phím cơ K2</td>
+                        <td>790.000 đ</td>
+                        <td><input type="number" class="qty" min="1" value="1"
+                                aria-label="Số lượng Bàn phím cơ K2"></td>
+                        <td class="line-total"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Tổng cộng</td>
+                        <td id="cart-total"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
 
-        <p>
-            <button type="button">Đặt hàng</button>
+        <p class="cart-actions">
+            <button type="button" class="btn btn-accent">Đặt hàng</button>
+            <button type="button" class="btn" id="clear-cart">Xóa giỏ hàng</button>
         </p>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 MiniShop. Dự án thực hành lập trình web.</p>
+        <div class="footer-grid">
+            <div>
+                <h3>MiniShop</h3>
+                <p>Phụ kiện công nghệ chọn lọc cho sinh viên: bền, dễ dùng và đúng giá.</p>
+            </div>
+            <div>
+                <h3>Khám phá</h3>
+                <a href="index.html">Trang chủ</a>
+                <a href="about.html">Giới thiệu</a>
+                <a href="cart.html">Giỏ hàng</a>
+            </div>
+            <div>
+                <h3>Liên hệ</h3>
+                <p>lenhattung@gmail.com</p>
+                <p>0123 456 789</p>
+                <p>8:00 - 22:00 mỗi ngày</p>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 MiniShop. Dự án thực hành lập trình web.</p>
     </footer>
 </body>
 
